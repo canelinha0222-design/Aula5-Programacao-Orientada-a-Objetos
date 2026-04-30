@@ -1,21 +1,22 @@
 package Questao1;
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
-        ArrayList<Integer>lista = new ArrayList<>(10);
-        lista.add(1);
-        lista.add(2);
-        lista.add(3);
-        lista.add(4);
-        lista.add(5);
-        lista.add(6);
-        lista.add(7);
-        lista.add(8);
-        lista.add(9);
-        lista.add(10);
-        for(int i : lista){
-            System.out.println(i);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nDigite o primeiro valor");
+        double valor1 = scanner.nextDouble();
+        System.out.println("\nDigite o segundo valor");
+        double valor2 = scanner.nextDouble();
+        double resultado = 0;
+        try{
+        resultado = valor1 / valor2;
+        if(Double.isNaN(resultado)){
+            throw new ArithmeticException("Divisão por zero");
         }
+        System.out.println("\nO resultado é : " + resultado + "\n");
+     } catch(ArithmeticException divisaoZero){
+            System.err.println("\nErro " + divisaoZero + "\n");
+        } 
     }
 }

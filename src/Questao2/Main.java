@@ -1,19 +1,16 @@
 package Questao2;
-import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String>frutas = new ArrayList<>(5);
-        frutas.add("Maçã");
-        frutas.add("Banana");
-        frutas.add("Laranja");
-        frutas.add("Uva");
-        frutas.add("Melancia");
-
-        frutas.remove(0);
-
-        for(String fruta : frutas){
-            System.out.println(fruta);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nDigite um número inteiro: ");
+        String valor = scanner.nextLine();
+        try{
+            Integer.parseInt(valor);
+        }catch(NumberFormatException e){
+            System.out.println("\nErro na conversão: " + "valor " + valor + "\n");
         }
     }
-    
+
 }
