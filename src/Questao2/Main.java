@@ -1,11 +1,16 @@
 package Questao2;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Carro c1 = new Carro();
-        Bicicleta b1 = new Bicicleta();
-        c1.mover();
-        b1.mover();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nDigite um número inteiro: ");
+        String valor = scanner.nextLine();
+        try{
+            Integer.parseInt(valor);
+        }catch(NumberFormatException e){
+            System.out.println("\nErro na conversão: " + "valor " + valor + "\n");
+        }
     }
 
 }
